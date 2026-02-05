@@ -7,7 +7,8 @@ public class Des {
 	private int valeur;
 	private Random random;
 	
-	public void Des() {
+	public Des() {
+		
 		try {
             random = SecureRandom.getInstanceStrong();
         } catch (Exception e) {
@@ -15,7 +16,9 @@ public class Des {
         }
 	}
 	public void lancerDes() {
+		System.out.println("on lance le Dés ...");
 		valeur = random.nextInt(0,12);
+		System.out.println("la valeur du Dés est : " + valeur);
 	}
 	
 	public int getValeur() {
