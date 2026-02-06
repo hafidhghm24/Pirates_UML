@@ -15,8 +15,8 @@ public class Des {
             e.printStackTrace();
         }
 	}
-	public void lancerDes() {
-		System.out.println("on lance le Dés ...");
+	public void lancerDes(String nom) {
+		System.out.println(nom + " : on lance le Dés ...");
 		valeur = random.nextInt(0,12);
 		System.out.println("la valeur du Dés est : " + valeur);
 	}
