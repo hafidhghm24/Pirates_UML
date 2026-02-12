@@ -6,19 +6,22 @@ import java.util.Random;
 public class Des {
 	private int valeur;
 	private Random random;
+	private Affichage journal;
 	
-	public Des() {
-		
+	public Des(Affichage journal) {
+		this.journal = journal;
 		try {
             random = SecureRandom.getInstanceStrong();
-        } catch (Exception e) {
+        } catch (Exception e){
             e.printStackTrace();
         }
 	}
 	public void lancerDes(String nom) {
-		System.out.println(nom + " : on lance le Dés ...");
+		journal.afficheLanceDee(nom);
+		
 		valeur = random.nextInt(0,12);
-		System.out.println("la valeur du Dés est : " + valeur);
+		
+		journal.afficheDee(valeur);
 	}
 	
 	public int getValeur() {
