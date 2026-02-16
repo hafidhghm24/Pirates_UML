@@ -1,5 +1,6 @@
 package jeu;
 
+
 public class Case {
     private int numero;
 

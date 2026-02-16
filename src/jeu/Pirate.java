@@ -37,10 +37,6 @@ public class Pirate {
 		return plateau.getPosition();
 	}
 
-	/*
-	 * TODO: mettre le testVictoire dans Plateau 
-	 */
-
 	protected void testVictoire() {
 		if (plateau.getPosition() == plateau.getNbCases()) {
 			journal.afficheVictoire(nom);

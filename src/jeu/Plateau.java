@@ -11,14 +11,14 @@ public class Plateau {
             } 
         positionPirate = 0;
     }
-
+    
     public void incrCase(int val) {
         positionPirate += val;
     }
  
     public void reculeCase() {
-        int surplus = positionPirate - cases.length;
-        positionPirate -= surplus;
+        int dif = positionPirate - cases.length;
+        positionPirate = cases.length - dif; 
         }
 
     public int getPosition() {
