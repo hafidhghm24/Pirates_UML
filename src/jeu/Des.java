@@ -19,7 +19,7 @@ public class Des {
 	public void lancerDes(String nom) {
 		journal.afficheLanceDee(nom);
 		
-		valeur = random.nextInt(0,12);
+		valeur = random.nextInt(2, 13);
 		
 		journal.afficheDee(valeur);
 	}

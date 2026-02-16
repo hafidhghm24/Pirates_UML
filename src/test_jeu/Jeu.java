@@ -10,8 +10,8 @@ public class Jeu {
 
 	public Jeu(Affichage journalPirate, String nom1, String nom2) {
 
-		joueur1 = new Pirate(nom1, nbCoeurs,ROUGE,  journalPirate);
-		joueur2 = new Pirate(nom2, nbCoeurs,BLEU,  journalPirate);
+		joueur1 = new Pirate(nom1, nbCoeurs,Couleur.ROUGE,  journalPirate);
+		joueur2 = new Pirate(nom2, nbCoeurs,Couleur.BLEU,  journalPirate);
 
 		boolean victoire1 = joueur1.getVictoire();
 		boolean victoire2 = joueur2.getVictoire();

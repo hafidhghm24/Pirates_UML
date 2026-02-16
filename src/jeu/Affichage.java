@@ -6,4 +6,5 @@ public interface Affichage {
 	public void afficheLanceDee(String nom);
 	public void afficheDeplacement(int nbcase);
 	public void afficheVictoire(String nom);
+	public void afficheRecule();
 }
