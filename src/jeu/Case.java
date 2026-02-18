@@ -11,4 +11,10 @@ public class Case {
     public int getNumero() {
         return numero;
     }
+    
+    public void action(Pirate joueur, Pirate ennemi, Affichage journal) {
+    	
+    	
+    }
+
 }

@@ -33,5 +33,20 @@ public class JournalPirate implements Affichage {
 	public void afficheRecule() {
 		System.out.println("Mille sabords ! JE RECULE !!!");
 	}
+	
+	@Override
+    public void afficheBloque(String nom) {
+        System.out.println("Un filet ! Le grand " + nom + " est piégé pendant 1 tour !");
+    }
+
+    @Override
+    public void afficheAttaque(String nom, Arme arme, int degats) {
+        System.out.println("BOUM ! " + nom + " trouve un " + arme + " et inflige " + degats + " dégâts !");
+    }
+
+    @Override
+    public void afficheMort(String nom) {
+        System.out.println("Le grand " + nom + " sombre dans les abysses (IL EST MORT !)");
+    }
 
 }

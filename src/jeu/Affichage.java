@@ -7,4 +7,7 @@ public interface Affichage {
 	public void afficheDeplacement(int nbcase);
 	public void afficheVictoire(String nom);
 	public void afficheRecule();
+    public void afficheBloque(String nom);
+    public void afficheAttaque(String nom, Arme arme, int degats);
+    public void afficheMort(String nom);
 }

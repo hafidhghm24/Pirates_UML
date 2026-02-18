@@ -13,6 +13,9 @@ public class Pirate {
 
 	private boolean victoire;
 	private Affichage journal;
+	private boolean estBloquer;
+
+	private boolean mort;
 
 	public Pirate(String nom, int nbCoeur, Couleur couleur, Affichage journal) {
 		this.nom = nom;
@@ -24,20 +27,25 @@ public class Pirate {
 
 	}
 
-	public int deplacer() {
+	public int deplacer(Pirate ennemi) {
+		if (estBloquer) {
+            journal.afficheBloque(nom);
+            estBloquer = false; 
+            return plateau.getPosition();
+        }
 
-		des.lancerDes(nom);
-		val = des.getValeur();
+        des.lancerDes(nom);
+        val = des.getValeur();
 
-		plateau.incrCase(val);
-		journal.afficheDeplacement(plateau.getPosition());
+        plateau.incrCase(val);
+        journal.afficheDeplacement(plateau.getPosition());
 
-		testVictoire();
+        testVictoire(ennemi);
 
-		return plateau.getPosition();
+        return plateau.getPosition();
 	}
 
-	protected void testVictoire() {
+	protected void testVictoire(Pirate ennemi) {
 		if (plateau.getPosition() == plateau.getNbCases()) {
 			journal.afficheVictoire(nom);
 			victoire = true;
@@ -47,7 +55,33 @@ public class Pirate {
 			
 			victoire = false;
 		}
+
 	}
+	
+	public void perteVie(int degats){
+		nbCoeur -= degats;
+		if (nbCoeur <= 0) {
+            nbCoeur = 0;
+        }
+	}
+	
+	public boolean estMort() {
+		return nbCoeur <= 0;
+	}
+	
+	
+	public void setBloquer(boolean bloquer) {
+        this.estBloquer = bloquer;
+    }
+	
+	public boolean isBloquer() {
+        return estBloquer;
+    }
+	
+	
+	public String getNom() {
+        return nom;
+    }
 
 	
 
