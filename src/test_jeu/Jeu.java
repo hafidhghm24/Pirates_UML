@@ -10,11 +10,15 @@ public class Jeu {
 
 	public Jeu(Affichage journalPirate, String nom1, String nom2) {
 
-		joueur1 = new Pirate(nom1, nbCoeurs, Couleur.ROUGE,  journalPirate);
-		joueur2 = new Pirate(nom2, nbCoeurs, Couleur.BLEU,  journalPirate);
-
+		Plateau plateau = new Plateau(journalPirate);
+		
+		joueur1 = new Pirate(nom1, nbCoeurs, Couleur.ROUGE,  journalPirate, plateau);
+		joueur2 = new Pirate(nom2, nbCoeurs, Couleur.BLEU,  journalPirate, plateau);
+		
 		boolean victoire1 = joueur1.getVictoire();
 		boolean victoire2 = joueur2.getVictoire();
+		
+		
 		
 		boolean mort1 = joueur1.estMort();
 		boolean mort2 = joueur2.estMort();

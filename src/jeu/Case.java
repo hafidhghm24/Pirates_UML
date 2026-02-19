@@ -1,20 +1,18 @@
 package jeu;
 
 
-public class Case {
+public abstract class Case {
     private int numero;
 
-    public Case(int numero) {
+    
+    protected Case(int numero) {
         this.numero = numero;
     }
-
+    
     public int getNumero() {
         return numero;
     }
     
-    public void action(Pirate joueur, Pirate ennemi, Affichage journal) {
-    	
-    	
-    }
+    protected abstract void action(Pirate joueur, Pirate ennemi, Affichage journal);
 
 }

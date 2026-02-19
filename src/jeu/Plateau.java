@@ -3,12 +3,33 @@ package jeu;
 public class Plateau {
     private Case[] cases;
     private int positionPirate;
+    private int nbCases = 30;
+    private CaseType casetype;
     
-    public Plateau(int nbCases) {
+    
+    public Plateau(Affichage journal) {
         cases = new Case[nbCases];
         for (int i = 0; i < nbCases; i++) {
-            cases[i] = new Case(i + 1);  
+            cases[i] = new CaseNormal(i + 1);  
             } 
+        
+        cases[7] = new CaseArme(7, Arme.CANON);
+        cases[7].action(joueur, ennemi, journal);
+        
+        cases[12] = new CaseArme(12, Arme.EPEE );
+        cases[7].action(joueur, ennemi, journal);
+        
+        cases[22] = new CaseArme(22, Arme.FUSIL);
+        cases[7].action(joueur, ennemi, journal);
+        
+        
+        
+        cases[5] = new CaseFilet(5);
+        cases[7].action(joueur, ennemi, journal);
+        
+        cases[15] = new CaseFilet(15);
+        cases[7].action(joueur, ennemi, journal);
+        
         positionPirate = 0;
     }
     
@@ -35,5 +56,9 @@ public class Plateau {
 
     public boolean estDerniereCase(int position) {
         return position == cases.length;  
+    }
+    
+    public CaseType getCaseType() {
+    	return casetype;
     }
 }

@@ -10,7 +10,8 @@ public class CaseArme extends Case {
 
     @Override
     public void action(Pirate joueur, Pirate ennemi, Affichage journal) {
-        int degats = arme.getDegats();
+        
+    	int degats = arme.getDegats();
         ennemi.perteVie(degats);
         journal.afficheAttaque(joueur.getNom(), arme, degats);
 

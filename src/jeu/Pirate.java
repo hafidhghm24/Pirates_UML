@@ -6,7 +6,7 @@ public class Pirate {
 	
 	private Couleur couleur;
 
-	private Plateau plateau;
+	
 
 	private Des des;
 	private int val;
@@ -14,16 +14,18 @@ public class Pirate {
 	private boolean victoire;
 	private Affichage journal;
 	private boolean estBloquer;
+	private Plateau plateau;
 
 	private boolean mort;
 
-	public Pirate(String nom, int nbCoeur, Couleur couleur, Affichage journal) {
+	public Pirate(String nom, int nbCoeur, Couleur couleur, Affichage journal, Plateau plateau) {
+		
 		this.nom = nom;
 		this.nbCoeur = nbCoeur;
 		this.journal = journal;
 		this.couleur = couleur;
 		des = new Des(journal);
-		plateau = new Plateau(30);
+		
 
 	}
 
@@ -49,7 +51,10 @@ public class Pirate {
 		if (plateau.getPosition() == plateau.getNbCases()) {
 			journal.afficheVictoire(nom);
 			victoire = true;
-		} else if (plateau.getPosition() > plateau.getNbCases()) {
+		}
+		
+		
+		else if (plateau.getPosition() > plateau.getNbCases()) {
 			plateau.reculeCase();
 			journal.afficheRecule();
 			
@@ -70,11 +75,11 @@ public class Pirate {
 	}
 	
 	
-	public void setBloquer(boolean bloquer) {
-        this.estBloquer = bloquer;
+	public void estBloquer() {
+        estBloquer = true;
     }
 	
-	public boolean isBloquer() {
+	public boolean getBloquer() {
         return estBloquer;
     }
 	
@@ -83,7 +88,6 @@ public class Pirate {
         return nom;
     }
 
-	
 
 	public boolean getVictoire() {
 		return victoire;

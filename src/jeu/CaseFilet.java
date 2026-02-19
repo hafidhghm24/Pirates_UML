@@ -9,7 +9,7 @@ public class CaseFilet extends Case {
     public void action(Pirate joueur, Pirate ennemi, Affichage journal) {
 
  
-        joueur.setBloquer(true);
+        joueur.estBloquer();
         journal.afficheBloque(joueur.getNom());
     }
 }
