@@ -4,16 +4,17 @@ public class Plateau {
     private Case[] cases;
     private int positionPirate;
     private int nbCases = 30;
-    private CaseType casetype;
+    
     
     
     public Plateau(Affichage journal) {
         cases = new Case[nbCases];
         for (int i = 0; i < nbCases; i++) {
-            cases[i] = new CaseNormal(i + 1);  
+            cases[i] = new Case(i + 1);  
             } 
         
-        cases[7] = new CaseArme(7, Arme.CANON);
+        /*
+         * cases[7] = new CaseArme(7, Arme.CANON);
         cases[7].action(joueur, ennemi, journal);
         
         cases[12] = new CaseArme(12, Arme.EPEE );
@@ -29,6 +30,8 @@ public class Plateau {
         
         cases[15] = new CaseFilet(15);
         cases[7].action(joueur, ennemi, journal);
+        */
+        
         
         positionPirate = 0;
     }
