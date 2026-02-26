@@ -2,40 +2,27 @@ package jeu;
 
 
 public class Case {
-    private int numero;
-    private Arme arme; 
-    private CaseType casetype;
+    private int numero; 
+    private CaseType type;
     
-    protected Case(int numero) {
+    protected Case(int numero, CaseType type) {
         this.numero = numero;
+        this.type = type;
     }
     
     public int getNumero() {
         return numero;
     }
     
-    public void actionFilet(Pirate joueur, Pirate ennemi, Affichage journal) {
-
-    	
-        joueur.estBloquer();
-        journal.afficheBloque(joueur.getNom());
+    
+    protected void actionCase(Pirate joueur, Pirate ennemi, Affichage journal) {
+    	this.type = CaseType.NORMAL;
     }
     
+	public CaseType setType() {
+		return type;
+	}
     
-    public void actionArme(Pirate joueur, Pirate ennemi, Affichage journal) {
-        
-    	int degats = arme.getDegats();
-        ennemi.perteVie(degats);
-        journal.afficheAttaque(joueur.getNom(), arme, degats);
-
-        if (ennemi.estMort()) {
-            journal.afficheMort(ennemi.getNom());
-        }
-    }
-
     
-    public Arme getArme() {
-        return arme;
-    }
     
 }

@@ -1,14 +1,14 @@
 package jeu;
 
 public class Plateau {
-    private Case[] cases;
     private int positionPirate;
     private int nbCases = 30;
+    private Case[] cases  = new Case[nbCases];
+    private int surplus;
     
     
     
     public Plateau(Affichage journal) {
-        cases = new Case[nbCases];
         for (int i = 0; i < nbCases; i++) {
             cases[i] = new Case(i + 1);  
             } 
@@ -41,8 +41,10 @@ public class Plateau {
     }
  
     public void reculeCase() {
-        int dif = positionPirate - cases.length;
-        positionPirate = cases.length - dif; 
+        surplus = positionPirate - cases.length;
+        positionPirate = cases.length - surplus;
+        cases[positionPirate].actionCase(null, null, null);
+        
         }
 
     public int getPosition() {
