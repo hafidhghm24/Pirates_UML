@@ -7,14 +7,14 @@ public class Pirate {
 	private Couleur couleur;
 	
 	private Des des;
-	private int val;
+	private int valeur;
 
 	private boolean victoire;
 	private Affichage journal;
 	private boolean estBloquer;
 	private Plateau plateau;
 
-	private boolean mort = false;
+
 
 	public Pirate(String nom, int nbCoeur, Couleur couleur, Affichage journal, Plateau plateau) {
 		
@@ -36,9 +36,9 @@ public class Pirate {
         }
 
         des.lancerDes(nom);
-        val = des.getValeur();
+        valeur = des.getValeur();
 
-        plateau.incrCase(val);
+        plateau.incrCase(valeur);
         journal.afficheDeplacement(plateau.getPosition());
 
         
@@ -73,7 +73,6 @@ public class Pirate {
 		nbCoeur -= degats;
 		if (nbCoeur <= 0) {
             nbCoeur = 0;
-            mort = true;
         }
 	}
 	
@@ -98,5 +97,9 @@ public class Pirate {
 
 	public boolean getVictoire() {
 		return victoire;
+	}
+	
+	public Couleur getCouleur() {
+		return couleur;
 	}
 }

@@ -3,8 +3,8 @@ package jeu;
 public class JournalPirate implements Affichage {
 
 	@Override
-	public void affichePirate(String nom) {
-		System.out.println("Bien le bonjour ! je suis " + nom + " le grand");
+	public void affichePirate(String nom, Couleur couleur) {
+		System.out.println("Bien le bonjour ! je suis " + nom + " le grand et je suis fiére d'arpanté la couleur " + couleur);
 	}
 
 	@Override

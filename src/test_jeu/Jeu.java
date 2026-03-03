@@ -16,7 +16,8 @@ public class Jeu {
 		joueur1 = new Pirate(nom1, nbCoeurs, Couleur.ROUGE,  journalPirate, plateau1);
 		joueur2 = new Pirate(nom2, nbCoeurs, Couleur.BLEU,  journalPirate, plateau2);
 		
-
+		journalPirate.affichePirate(joueur1.getNom(), joueur1.getCouleur());
+		journalPirate.affichePirate(joueur2.getNom(), joueur2.getCouleur());
 
 		jouer();
 	}

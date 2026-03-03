@@ -10,7 +10,7 @@ public class Plateau {
     
     public Plateau(Affichage journal) {
         for (int i = 0; i < nbCases; i++) {
-            cases[i] = new Case(i + 1, CaseType.NORMAL);  
+            cases[i] = new CaseNormal(i + 1);  
             } 
         
         cases[7]  = new CaseArme(Arme.CANON, 8); 

@@ -1,7 +1,7 @@
 package jeu;
 
 
-public class Case {
+public abstract class Case {
     private int numero; 
     private CaseType type;
     
@@ -15,9 +15,7 @@ public class Case {
     }
     
     
-    public void actionCase(Pirate joueur, Pirate ennemi, Affichage journal) {
-    	this.type = CaseType.NORMAL;
-    }
+    public abstract void actionCase(Pirate joueur, Pirate ennemi, Affichage journal);
     
 	public CaseType getType() {
 		return type;
