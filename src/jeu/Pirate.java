@@ -14,7 +14,7 @@ public class Pirate {
 	private boolean estBloquer;
 	private Plateau plateau;
 
-	private boolean mort;
+	private boolean mort = false;
 
 	public Pirate(String nom, int nbCoeur, Couleur couleur, Affichage journal, Plateau plateau) {
 		
@@ -45,6 +45,11 @@ public class Pirate {
         
         testVictoire(ennemi);
 
+        if(!victoire && plateau.getPosition() <= plateau.getNbCases()) {
+        	Case caseActuelleCase = plateau.getCase(plateau.getPosition());
+        	caseActuelleCase.actionCase(this, ennemi, journal);
+        }
+        
         return plateau.getPosition();
 	}
 

@@ -15,7 +15,7 @@ public class Case {
     }
     
     
-    protected void actionCase(Pirate joueur, Pirate ennemi, Affichage journal) {
+    public void actionCase(Pirate joueur, Pirate ennemi, Affichage journal) {
     	this.type = CaseType.NORMAL;
     }
     

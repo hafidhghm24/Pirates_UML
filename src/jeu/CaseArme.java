@@ -17,7 +17,7 @@ public class CaseArme extends Case{
 	    ennemi.perteVie(degats);
 	    journal.afficheAttaque(joueur.getNom(), arme, degats);
 
-	    if (ennemi.estMort()) {
+	    if (ennemi.testestMort()) {
 	        journal.afficheMort(ennemi.getNom());
 	    }
 	}

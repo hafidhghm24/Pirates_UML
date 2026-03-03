@@ -13,24 +13,13 @@ public class Plateau {
             cases[i] = new Case(i + 1, CaseType.NORMAL);  
             } 
         
-        /*
-         * cases[7] = new CaseArme(7, Arme.CANON);
-        cases[7].action(joueur, ennemi, journal);
+        cases[7]  = new CaseArme(Arme.CANON, 8); 
+        cases[12] = new CaseArme(Arme.EPEE,  13);
+        cases[22] = new CaseArme(Arme.FUSIL, 23);
         
-        cases[12] = new CaseArme(12, Arme.EPEE );
-        cases[7].action(joueur, ennemi, journal);
-        
-        cases[22] = new CaseArme(22, Arme.FUSIL);
-        cases[7].action(joueur, ennemi, journal);
-        
-        
-        
-        cases[5] = new CaseFilet(5);
-        cases[7].action(joueur, ennemi, journal);
-        
-        cases[15] = new CaseFilet(15);
-        cases[7].action(joueur, ennemi, journal);
-        */
+
+        cases[5]  = new CaseFilet(6);
+        cases[15] = new CaseFilet(16);
         
         
         positionPirate = 0;
