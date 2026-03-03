@@ -10,28 +10,29 @@ public class Jeu {
 
 	public Jeu(Affichage journalPirate, String nom1, String nom2) {
 
-		Plateau plateau = new Plateau(journalPirate);
+		Plateau plateau1 = new Plateau(journalPirate);
+		Plateau plateau2 = new Plateau(journalPirate);
 		
-		joueur1 = new Pirate(nom1, nbCoeurs, Couleur.ROUGE,  journalPirate, plateau);
-		joueur2 = new Pirate(nom2, nbCoeurs, Couleur.BLEU,  journalPirate, plateau);
+		joueur1 = new Pirate(nom1, nbCoeurs, Couleur.ROUGE,  journalPirate, plateau1);
+		joueur2 = new Pirate(nom2, nbCoeurs, Couleur.BLEU,  journalPirate, plateau2);
 		
 		boolean victoire1 = joueur1.getVictoire();
 		boolean victoire2 = joueur2.getVictoire();
 		
 		
 		
-		boolean mort1 = joueur1.estMort();
-		boolean mort2 = joueur2.estMort();
+		boolean mort1 = joueur1.testestMort();
+		boolean mort2 = joueur2.testestMort();
 
 		jouer(victoire1, victoire2);
 	}
 
 	protected void jouer(boolean victoire1, boolean victoire2) {
-		while (!joueur1.getVictoire() && !joueur2.getVictoire() && !joueur1.estMort() && !joueur2.estMort()) {
+		while (!joueur1.getVictoire() && !joueur2.getVictoire() && !joueur1.testestMort() && !joueur2.testestMort()) {
 
             joueur1.deplacer(joueur2);
 
-            if (!joueur1.getVictoire() && !joueur2.estMort()) {
+            if (!joueur1.getVictoire() && !joueur2.testestMort()) {
                 joueur2.deplacer(joueur1);
             }
 		}

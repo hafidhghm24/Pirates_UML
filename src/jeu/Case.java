@@ -19,7 +19,7 @@ public class Case {
     	this.type = CaseType.NORMAL;
     }
     
-	public CaseType setType() {
+	public CaseType getType() {
 		return type;
 	}
     

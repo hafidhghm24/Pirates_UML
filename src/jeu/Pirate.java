@@ -5,9 +5,7 @@ public class Pirate {
 	private int nbCoeur;
 	
 	private Couleur couleur;
-
 	
-
 	private Des des;
 	private int val;
 
@@ -24,6 +22,7 @@ public class Pirate {
 		this.nbCoeur = nbCoeur;
 		this.journal = journal;
 		this.couleur = couleur;
+		this.plateau = plateau;
 		des = new Des(journal);
 		
 
@@ -42,6 +41,8 @@ public class Pirate {
         plateau.incrCase(val);
         journal.afficheDeplacement(plateau.getPosition());
 
+        
+        
         testVictoire(ennemi);
 
         return plateau.getPosition();
@@ -67,10 +68,11 @@ public class Pirate {
 		nbCoeur -= degats;
 		if (nbCoeur <= 0) {
             nbCoeur = 0;
+            mort = true;
         }
 	}
 	
-	public boolean estMort() {
+	public boolean testestMort() {
 		return nbCoeur <= 0;
 	}
 	

@@ -10,7 +10,7 @@ public class Plateau {
     
     public Plateau(Affichage journal) {
         for (int i = 0; i < nbCases; i++) {
-            cases[i] = new Case(i + 1);  
+            cases[i] = new Case(i + 1, CaseType.NORMAL);  
             } 
         
         /*
@@ -38,12 +38,12 @@ public class Plateau {
     
     public void incrCase(int val) {
         positionPirate += val;
+        
     }
  
     public void reculeCase() {
         surplus = positionPirate - cases.length;
         positionPirate = cases.length - surplus;
-        cases[positionPirate].actionCase(null, null, null);
         
         }
 
@@ -63,7 +63,5 @@ public class Plateau {
         return position == cases.length;  
     }
     
-    public CaseType getCaseType() {
-    	return casetype;
-    }
+    
 }
