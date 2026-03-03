@@ -16,18 +16,12 @@ public class Jeu {
 		joueur1 = new Pirate(nom1, nbCoeurs, Couleur.ROUGE,  journalPirate, plateau1);
 		joueur2 = new Pirate(nom2, nbCoeurs, Couleur.BLEU,  journalPirate, plateau2);
 		
-		boolean victoire1 = joueur1.getVictoire();
-		boolean victoire2 = joueur2.getVictoire();
-		
-		
-		
-		boolean mort1 = joueur1.testestMort();
-		boolean mort2 = joueur2.testestMort();
 
-		jouer(victoire1, victoire2);
+
+		jouer();
 	}
 
-	protected void jouer(boolean victoire1, boolean victoire2) {
+	protected void jouer() {
 		while (!joueur1.getVictoire() && !joueur2.getVictoire() && !joueur1.testestMort() && !joueur2.testestMort()) {
 
             joueur1.deplacer(joueur2);
