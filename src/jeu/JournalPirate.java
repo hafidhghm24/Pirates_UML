@@ -3,7 +3,7 @@ package jeu;
 import java.util.Scanner;
 
 public class JournalPirate implements Affichage {
-	public Scanner scanner = new Scanner(System.in);
+	private Scanner scanne = new Scanner(System.in);
 	
 	@Override
 	public void affichePirate(String nom, Couleur couleur) {
@@ -72,7 +72,7 @@ public class JournalPirate implements Affichage {
     @Override
     public void scanner() {
     	System.out.println("Veuillez saisir y pour continuer :");
-    	scanner.next();
+    	scanne.next();
     }
     
     @Override

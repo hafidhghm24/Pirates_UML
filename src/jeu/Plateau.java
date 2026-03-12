@@ -4,7 +4,7 @@ public class Plateau {
     private int positionPirate;
     private int nbCases = 30;
     private Case[] cases  = new Case[nbCases];
-    private int surplus;
+    
     
     
     
@@ -25,12 +25,12 @@ public class Plateau {
 
         cases[5]  = new CaseFilet(6);
         cases[15] = new CaseFilet(16);
-        cases[20] = new CaseFilet(20);
+        cases[20] = new CaseFilet(21);
         
         
-        cases[21] = new CaseManger(21);
-        cases[24] = new CaseManger(24);
-        cases[28] = new CaseManger(28);
+        cases[21] = new CaseManger(22);
+        cases[24] = new CaseManger(25);
+        cases[28] = new CaseManger(29);
         
         
         positionPirate = 0;
@@ -42,6 +42,7 @@ public class Plateau {
     }
  
     public void reculeCase() {
+    	int surplus;
         surplus = positionPirate - cases.length;
         positionPirate = cases.length - surplus;
         
@@ -52,7 +53,7 @@ public class Plateau {
     }
 
     public int getNbCases() {
-        return cases.length;
+        return nbCases;
     }
 
     public Case getCase(int numero) {

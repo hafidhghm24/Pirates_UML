@@ -7,7 +7,6 @@ public class Pirate {
 	private Couleur couleur;
 	
 	private Des des;
-	private int valeur;
 
 	private boolean victoire;
 	private Affichage journal;
@@ -24,11 +23,11 @@ public class Pirate {
 		this.couleur = couleur;
 		this.plateau = plateau;
 		des = new Des(journal);
-		
 
 	}
 
 	public int deplacer(Pirate ennemi) {
+		int valeur;
 		if (estBloquer) {
             journal.afficheBloque(nom);
             estBloquer = false; 
@@ -43,7 +42,7 @@ public class Pirate {
 
         
         
-        testVictoire(ennemi);
+        testVictoire();
 
         if(!victoire && plateau.getPosition() <= plateau.getNbCases()) {
         	Case caseActuelleCase = plateau.getCase(plateau.getPosition());
@@ -54,7 +53,7 @@ public class Pirate {
         return plateau.getPosition();
 	}
 
-	protected void testVictoire(Pirate ennemi) {
+	protected void testVictoire() {
 		if (plateau.getPosition() == plateau.getNbCases()) {
 			journal.afficheVictoire(nom);
 			victoire = true;
