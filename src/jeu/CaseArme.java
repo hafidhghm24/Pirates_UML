@@ -14,8 +14,8 @@ public class CaseArme extends Case{
 	public void actionCase(Pirate joueur, Pirate ennemi, Affichage journal) {
 	    
 		int degats = arme.getDegats();
-	    ennemi.perteVie(degats);
 	    journal.afficheAttaque(joueur.getNom(), arme, degats);
+	    ennemi.perteVie(degats);
 
 	    if (ennemi.testestMort()) {
 	        journal.afficheMort(ennemi.getNom());

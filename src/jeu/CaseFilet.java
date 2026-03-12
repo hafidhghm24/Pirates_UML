@@ -12,7 +12,7 @@ public class CaseFilet extends Case {
 	public void actionCase(Pirate joueur, Pirate ennemi, Affichage journal) {
 	        
 			joueur.estBloquer();
-	        journal.afficheBloque(joueur.getNom());
+	        journal.afficheFilet(joueur.getNom());
 	    }
 	
 

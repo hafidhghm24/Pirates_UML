@@ -1,7 +1,10 @@
 package jeu;
 
-public class JournalPirate implements Affichage {
+import java.util.Scanner;
 
+public class JournalPirate implements Affichage {
+	public Scanner scanner = new Scanner(System.in);
+	
 	@Override
 	public void affichePirate(String nom, Couleur couleur) {
 		System.out.println("Bien le bonjour ! je suis " + nom + " le grand et je suis fiére d'arpanté la couleur " + couleur);
@@ -15,7 +18,7 @@ public class JournalPirate implements Affichage {
 
 	@Override
 	public void afficheLanceDee(String nom) {
-		System.out.println("\nAttention ! le grand " + nom + " lance le Dee ");
+		System.out.println("\nAttention ! le grand " + nom + " lance le Dé ");
 	}
 
 	@Override
@@ -36,7 +39,7 @@ public class JournalPirate implements Affichage {
 	
 	@Override
     public void afficheBloque(String nom) {
-        System.out.println("Un filet ! Le grand " + nom + " est piégé pendant 1 tour !");
+        System.out.println("Le grand " + nom + " JE SUIS PIEGER !");
     }
 
     @Override
@@ -48,5 +51,40 @@ public class JournalPirate implements Affichage {
     public void afficheMort(String nom) {
         System.out.println("Le grand " + nom + " sombre dans les abysses (IL EST MORT !)");
     }
+    
+    @Override
+    public void affichePV(String nom, int pv) {
+        System.out.println("LES PV de " +  nom+": " + pv );
+    }
+    
+    @Override
+    public void affichePosition(String nom, int position) {
+    	System.out.println("la position de " + nom + ": " + position);
+    }
+    
+    @Override
+    public void afficheFilet(String nom){
+    	System.out.println("Un filet ! Le grand " + nom + " est piégé pendant 1 tour !");
+    }
+    
+
+    
+    @Override
+    public void scanner() {
+    	System.out.println("Veuillez saisir y pour continuer :");
+    	scanner.next();
+    }
+    
+    @Override
+    public void affichesoin(String nom) {
+    	System.out.println(nom + ": uuuuuh ça a lair trop bon !");
+    }
+    
+    @Override
+    public void affichePasManger(String nom) {
+    	System.out.println(nom + ": NOOON je suis calé je ne peu rien manger !");
+    }
+    
+    
 
 }

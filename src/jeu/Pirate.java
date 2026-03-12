@@ -50,6 +50,7 @@ public class Pirate {
         	caseActuelleCase.actionCase(this, ennemi, journal);
         }
         
+        journal.affichePosition(nom, plateau.getPosition());
         return plateau.getPosition();
 	}
 
@@ -74,6 +75,18 @@ public class Pirate {
 		if (nbCoeur <= 0) {
             nbCoeur = 0;
         }
+		journal.affichePV(nom, nbCoeur);
+	}
+	
+	public void soin() {
+		if(nbCoeur< 4) {
+			nbCoeur += 2;
+			journal.affichePV(nom, nbCoeur);
+		}
+		else {
+			journal.affichePasManger(nom);
+		}
+		
 	}
 	
 	public boolean testestMort() {
@@ -101,5 +114,9 @@ public class Pirate {
 	
 	public Couleur getCouleur() {
 		return couleur;
+	}
+	
+	public int getNbCoeur() {
+		return nbCoeur;
 	}
 }

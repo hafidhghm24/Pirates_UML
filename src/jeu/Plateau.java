@@ -8,18 +8,29 @@ public class Plateau {
     
     
     
-    public Plateau(Affichage journal) {
+    public Plateau() {
         for (int i = 0; i < nbCases; i++) {
             cases[i] = new CaseNormal(i + 1);  
             } 
         
         cases[7]  = new CaseArme(Arme.CANON, 8); 
+        
         cases[12] = new CaseArme(Arme.EPEE,  13);
+        cases[17] = new CaseArme(Arme.EPEE, 17);
+        
         cases[22] = new CaseArme(Arme.FUSIL, 23);
+        cases[4] = new CaseArme(Arme.FUSIL, 4);
+        
         
 
         cases[5]  = new CaseFilet(6);
         cases[15] = new CaseFilet(16);
+        cases[20] = new CaseFilet(20);
+        
+        
+        cases[21] = new CaseManger(21);
+        cases[24] = new CaseManger(24);
+        cases[28] = new CaseManger(28);
         
         
         positionPirate = 0;

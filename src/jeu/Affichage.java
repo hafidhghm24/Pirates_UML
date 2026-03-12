@@ -10,4 +10,11 @@ public interface Affichage {
     public void afficheBloque(String nom);
     public void afficheAttaque(String nom, Arme arme, int degats);
     public void afficheMort(String nom);
+    public void affichePV(String nom, int pv);
+    public void affichePosition(String nom, int position);
+    public void afficheFilet(String nom);
+    public void affichesoin(String nom);
+    public void affichePasManger(String nom);
+    
+    public void scanner();
 }
