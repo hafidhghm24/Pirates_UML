@@ -1,6 +1,4 @@
 package test_jeu;
-
-
 import jeu.*;
 
 public class Jeu {
