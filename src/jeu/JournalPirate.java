@@ -71,8 +71,8 @@ public class JournalPirate implements Affichage {
     
     @Override
     public void scanner() {
-    	System.out.println("Veuillez saisir y pour continuer :");
-    	scanne.next();
+    	System.out.println("Veuillez appuyer sur Enter pour continuer :");
+    	scanne.nextLine();
     }
     
     @Override
