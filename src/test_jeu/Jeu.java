@@ -7,15 +7,18 @@ public class Jeu {
 	private Pirate joueur1;
 	private Pirate joueur2;
 	private Affichage journal;
+	private String nom1;
+	private String nom2;
 
-	public Jeu(Affichage journalPirate, String nom1, String nom2) {
+	public Jeu(Affichage journalPirate) {
 		this.journal = journalPirate;
 		
 		Plateau plateau1 = new Plateau();
 		Plateau plateau2 = new Plateau();
 		
-		joueur1 = new Pirate(nom1, nbCoeurs, Couleur.ROUGE,  journal, plateau1);
-		joueur2 = new Pirate(nom2, nbCoeurs, Couleur.BLEU,  journal, plateau2);
+		nom1 = "Jack";
+		nom2 = "Bill";
+		creerPirate(nom1, nom2, plateau1, plateau2);
 		
 		journal.affichePirate(joueur1.getNom(), joueur1.getCouleur());
 		journal.affichePirate(joueur2.getNom(), joueur2.getCouleur());
@@ -24,19 +27,28 @@ public class Jeu {
 		jouer();
 	}
 
+	protected void creerPirate(String nom1, String nom2, Plateau plateau1, Plateau plateau2) {
+		joueur1 = new Pirate(nom1, nbCoeurs, Couleur.ROUGE,  journal, plateau1);
+		joueur2 = new Pirate(nom2, nbCoeurs, Couleur.BLEU,  journal, plateau2);
+	}
+
 	protected void jouer() {
 		
-		while (!joueur1.getVictoire() && !joueur2.getVictoire() && !joueur1.testestMort() && !joueur2.testestMort()) {
+		while (testVictoire()) {
 
 			journal.scanner();
             joueur1.deplacer(joueur2);
 
-            if (!joueur1.getVictoire() && !joueur2.testestMort()) {
+            if (testVictoire()) {
 
             	journal.scanner();
                 joueur2.deplacer(joueur1);
             }
 		}
+	}
+
+	protected boolean testVictoire() {
+		return !joueur1.getVictoire() && !joueur2.getVictoire() && !joueur1.testestMort() && !joueur2.testestMort();
 	}
 
 }
