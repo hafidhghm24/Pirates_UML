@@ -1,20 +1,20 @@
 package jeu;
 
 public interface Affichage {
-	public void affichePirate(String nom, Couleur couleur);
-	public void afficheDee(int value);
-	public void afficheLanceDee(String nom);
-	public void afficheDeplacement(int nbcase);
-	public void afficheVictoire(String nom);
-	public void afficheRecule();
-    public void afficheBloque(String nom);
-    public void afficheAttaque(String nom, Arme arme, int degats);
-    public void afficheMort(String nom);
-    public void affichePV(String nom, int pv);
-    public void affichePosition(String nom, int position);
-    public void afficheFilet(String nom);
-    public void affichesoin(String nom);
-    public void affichePasManger(String nom);
+	void affichePirate(String nom, Couleur couleur);
+	void afficheDee(int value);
+	void afficheLanceDee(String nom);
+	void afficheDeplacement(int nbcase);
+	void afficheVictoire(String nom);
+	void afficheRecule();
+    void afficheBloque(String nom);
+    void afficheAttaque(String nom, Arme arme, int degats);
+    void afficheMort(String nom);
+    void affichePV(String nom, int pv);
+    void affichePosition(String nom, int position);
+    void afficheFilet(String nom);
+    void affichesoin(String nom);
+    void affichePasManger(String nom);
     
     public void scanner();
 }
